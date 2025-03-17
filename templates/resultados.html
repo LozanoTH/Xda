@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultados</title>
+</head>
+<body>
+    <h1>Resultados</h1>
+    {% for candidato, votos in votos.items() %}
+        <div>
+            <img src="{{ url_for('static', filename='images/' + candidato.replace(' ', '') + '.jpg') }}" width="100">
+            <p>{{ candidato }}: {{ votos }} votos</p>
+        </div>
+    {% endfor %}
+    <a href="/">Volver a votar</a>
+</body>
+</html>
